@@ -1,3 +1,1 @@
-# The starter uses only the Python standard library.
-# List any library you add here, one per line, with an exact version, for example:
-# requests==2.32.3
+# No third-party dependencies. Uses only the Python 3.11+ standard library.
