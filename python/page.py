@@ -2,9 +2,9 @@
 
 import hashlib
 import json
-from decimal import Decimal
 from html import escape
 
+from messages import format_amount
 from plan import parse_date
 
 
@@ -30,7 +30,7 @@ def _action_card(today, action, invoice, decisions, csrf_token):
     step = action["step"].title()
     customer = escape(invoice["customer"])
     invoice_id = escape(action["invoice_id"])
-    amount = escape(f"{invoice['currency']} {Decimal(str(invoice['amount'])):.2f}")
+    amount = escape(f"{invoice['currency']} {format_amount(invoice['amount'])}")
     due_date = escape(invoice["due_date"])
 
     if action["needs_approval"]:
